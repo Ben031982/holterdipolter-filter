@@ -136,10 +136,15 @@ automatisierten Werte dieses einen Parameters. Gespeicherte Projekte und alles a
 
 ## Bauen über GitHub Actions
 
-1. Jeder Push auf GitHub startet unter **Actions** den Workflow „Build VST3" (oder von Hand über
-   „Run workflow"). Änderungen nur an Texten (`*.md`, `docs/`) lösen keinen Build aus.
-2. Nach dem Lauf die Datei unter **Artifacts** herunterladen:
-   `holterdipolter-Filter-Windows-VST3.zip` oder `holterdipolter-Filter-macOS-VST3.zip`.
+1. Jeder Push auf `main` startet unter **Actions** den Workflow „Build VST3" für Windows. Änderungen nur an
+   Texten (`*.md`, `docs/`) lösen keinen Build aus.
+2. Nach dem Lauf die Datei unter **Artifacts** herunterladen: `holterdipolter-Filter-Windows-VST3.zip`.
+3. macOS wird nur gebaut, wenn der Workflow von Hand gestartet wird („Run workflow", Haken bei
+   „Also build for macOS"). Mac-Rechner sind bei GitHub knapp und kosten bei privaten Repositories das
+   Zehnfache an Actions-Minuten.
+
+**Release:** Ein Tag wie `v1.1` baut Windows und legt unter **Releases** eine Version mit der Plugin-ZIP und dem
+Userguide an. Der Text dazu ist der Abschnitt „## Neu in 1.1" aus diesem README; den also vorher schreiben.
 
 Der Workflow baut auch die DSP-Tests und bricht ab, wenn einer fehlschlägt. Jeder Lauf baut JUCE mit
 und dauert deshalb einige Minuten.
