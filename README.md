@@ -143,8 +143,10 @@ automatisierten Werte dieses einen Parameters. Gespeicherte Projekte und alles a
    „Also build for macOS"). Mac-Rechner sind bei GitHub knapp und kosten bei privaten Repositories das
    Zehnfache an Actions-Minuten.
 
-**Release:** Ein Tag wie `v1.1` baut Windows und legt unter **Releases** eine Version mit der Plugin-ZIP und dem
-Userguide an. Der Text dazu ist der Abschnitt „## Neu in 1.1" aus diesem README; den also vorher schreiben.
+**Release:** Unter **Actions** → „Build VST3" → **Run workflow** bei „Publish as release" die Version eintragen
+(zum Beispiel `1.1`). Der Lauf baut Windows und legt unter **Releases** die Version `v1.1` mit der Plugin-ZIP und
+dem Userguide an. Der Text dazu ist der Abschnitt „## Neu in 1.1" aus diesem README; den also vorher schreiben.
+Ein gepushter Tag wie `v1.1` tut dasselbe.
 
 Der Workflow baut auch die DSP-Tests und bricht ab, wenn einer fehlschlägt. Jeder Lauf baut JUCE mit
 und dauert deshalb einige Minuten.
